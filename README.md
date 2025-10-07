@@ -21,7 +21,24 @@ To write and execute an Assembly Language Program for sorting data in Ascending 
 
 ## Program (Ascending order)
 
-```asm
+```asm ORG 0000H
+LOOP1:MOV R0,#40H
+MOV R6,30H
+DEC R6
+LOOP:MOV A,@R0
+INC R0
+MOV B,@R0
+CJNE A,B,NEXT
+NEXT:JNC DOWN
+MOV@R0,A
+DEC R0
+MOV@R0,B
+INC R0
+DOWN:DJNZ R6,LOOP
+MOV R1,#02H
+DJNZ R1,LOOP1
+END
+
 
 
 
@@ -29,6 +46,7 @@ To write and execute an Assembly Language Program for sorting data in Ascending 
 ```
 ## OUTPUT(Ascending order)
 
+<img width="718" height="822" alt="Screenshot 2025-10-07 185201" src="https://github.com/user-attachments/assets/23ed9ed2-a273-4520-a8f4-346228bfdae3" />
 
 
 ---
@@ -48,6 +66,24 @@ To write and execute an Assembly Language Program for sorting data in Ascending 
 ## Program (Descending order)
 
 ```asm
+ORG 0000H
+LOOP1:MOV R0,#40H
+MOV R6,30H
+DEC R6
+LOOP:MOV A,@R0
+INC R0
+MOV B,@R0
+CJNE A,B,NEXT
+NEXT:JNC DOWN
+MOV@R0,A
+DEC R0
+MOV@R0,B
+INC R0
+DOWN:DJNZ R6,LOOP
+MOV R1,#02H
+DJNZ R1,LOOP1
+END
+
 
 
 
@@ -55,6 +91,7 @@ To write and execute an Assembly Language Program for sorting data in Ascending 
 ```
 ## OUTPUT(Descending order)
 
+<img width="545" height="836" alt="Screenshot 2025-10-07 190814" src="https://github.com/user-attachments/assets/a0499996-78f2-4df9-b7e0-0cc8299b8fc3" />
 
 
 ---
